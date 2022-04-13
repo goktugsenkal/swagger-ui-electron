@@ -2,6 +2,7 @@
   "name": "swagger-ui-electron",
   "version": "1.0.0",
   "description": "Electron Wrapper for Swagger UI",
+  "author": "Jonathan Turnock",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -9,15 +10,16 @@
     "prettier:fix": "prettier . -w",
     "clean": "rimraf out",
     "start": "electron-forge start",
+    "prebuild": "npm i",
+    "build": "npm run make",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "debug": "^4.3.4",
     "electron-squirrel-startup": "^1.0.0",
-    "swagger-ui-dist": "^4.10.3"
+    "swagger-ui-dist": "latest"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
@@ -38,14 +40,12 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "swagger_ui_electron"
+            "name": "SwaggerUi"
           }
         },
         {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
+          "name": "@electron-forge/maker-zip"
+
         },
         {
           "name": "@electron-forge/maker-deb",
