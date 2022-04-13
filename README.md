@@ -13,7 +13,7 @@ $ npm install
 
 Build Package
 ```shell
-$ npm build
+$ npm run make
 ```
 
 Copy the system compatible executable from the `out` folder to your desired install location.
