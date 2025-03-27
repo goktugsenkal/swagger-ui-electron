@@ -11,8 +11,9 @@
     "clean": "rimraf out",
     "start": "electron-forge start",
     "prebuild": "npm i",
+    "fetch-and-pull": "git fetch origin master && git pull origin master",
     "update-swagger-dist": "cp custom-swagger-initializer.js node_modules/swagger-ui-dist/swagger-initializer.js",
-    "build": "npm run update-swagger-dist && npm run make",
+    "build": "npm run fetch-and-pull && npm run update-swagger-dist && npm run make",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
