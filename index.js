@@ -3,8 +3,6 @@ const { join } = require("path");
 const fs = require("fs");
 const os = require("os");
 
-let mainWindow;
-
 const createMainWindow = () => {
   const { width: screenWidth, height: screenHeight } = screen.getPrimaryDisplay().workAreaSize;
 

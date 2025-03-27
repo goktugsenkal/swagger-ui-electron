@@ -1,48 +1,73 @@
 # Swagger UI Electron
 
-Small electron wrapper around the Swagger UI Dist package to serve it locally.
+An Electron-based desktop wrapper around the official Swagger UI Dist package, enhanced to conveniently browse local Swagger JSON files directly from your Downloads folder.
 
-This uses the latest `swagger-ui-dist` as published by the Swagger Team, so it should always be up-to-date.
+This project uses the latest `swagger-ui-dist` published by the Swagger Team, ensuring it's always up-to-date.
 
-Just re-run the installation steps to update for any new releases.
+## Features
+
+- Automatically scans your `~/Downloads` directory for Swagger JSON files.
+- Lists available Swagger files sorted by creation date (newest first).
+- Clearly displays the Swagger API title and version for easy selection.
+- Integrated navigation between file selection and Swagger UI view.
 
 ## Installation
 
-The project must be built from source, so requires NodeJS to be installed.
-
-The npm build script handles the work
+Ensure you have [NodeJS](https://nodejs.org/) installed. Clone the repository and build from source:
 
 ```shell
-$ npm run build
+git clone <repository-url>
+cd swagger-ui-electron
+npm install
+npm run build
 ```
 
-Copy the system compatible executable from the `out` folder to your desired install location.
+Copy the generated executable from the `out` folder to your desired installation location:
 
-### OSX
+### macOS
 
-Example to copy an Arm Mac Bundle 
+For example, to copy an ARM Mac build:
 
 ```shell
-$ cp -R ./out/swagger-ui-electron-darwin-arm64/swagger-ui-electron.app ~/Applications
+cp -R ./out/swagger-ui-electron-darwin-arm64/swagger-ui-electron.app ~/Applications
 ```
 
 ### Windows
 
-On Windows you can run the Squirrel Installer located in `out/make/squirrel.windows/x64/swagger-ui-election-X.X.X Setup.exe` 
-which installs to the AppData folder location `%LOCALAPPDATA%\SwaggerUi` which can be then pinned to start as required.
+Run the Squirrel installer located at:
 
-See https://www.electronforge.io/config/makers/squirrel.windows
+```
+out/make/squirrel.windows/x64/swagger-ui-electron-X.X.X Setup.exe
+```
 
-Or just copy the built app to Program Files etc as required from `out/swagger-ui-electron-win32-x64`
+This installer places the app in `%LOCALAPPDATA%\SwaggerUi`, from which it can be pinned to the Start menu.
+
+Alternatively, manually copy the built app from:
+
+```
+out/swagger-ui-electron-win32-x64
+```
+
+to your desired location, such as `Program Files`.
+
+See [Electron Forge - Squirrel.Windows](https://www.electronforge.io/config/makers/squirrel.windows) for additional details.
 
 ## Usage
 
-By default, it loads the example petstore swagger spec, change the URL to point to the desired API 
-spec and press explore to load it.
+Upon opening, the application displays a list of Swagger JSON files found in your Downloads folder. Select a file to load it in Swagger UI.
+![img2.png](img2.png)
 
-![img.png](img.png)
+Use the provided "Back to File Picker" button to return to the file selection view.
+
+![img-spotify.png](img-spotify.png)
 
 ## Built With
 
-- https://www.electronjs.org/
-- https://www.npmjs.com/package/swagger-ui-dist
+- [Electron](https://www.electronjs.org/)
+- [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui-dist)
+
+## Credits
+
+This project is a fork of [swagger-ui-electron](https://github.com/JonathanTurnock/swagger-ui-electron) by [Jonathan Turnock](https://github.com/JonathanTurnock) with minor modifications.
+
+
