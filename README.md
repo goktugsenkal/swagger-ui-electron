@@ -55,7 +55,7 @@ See [Electron Forge - Squirrel.Windows](https://www.electronforge.io/config/make
 ## Usage
 
 Upon opening, the application displays a list of Swagger JSON files found in your Downloads folder. Select a file to load it in Swagger UI.
-![img2.png](img2.png)
+![img.png](img.png)
 
 Use the provided "Back to File Picker" button to return to the file selection view.
 
